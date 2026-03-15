@@ -6,6 +6,19 @@
     <title>Kairos - Confirmacao</title>
 </head>
 <body>
-    
+    <script>
+
+        function enviarWhatsApp(){
+            let numero = 
+            document.getElementById("whatsapp").value;
+
+            let mensagem = "Óla,fiz um agendamento pelo kairos.%OA%OANome: Cliente%OAServiço: Corte%OAHorário:14:00 pm ";
+
+            let link = "https://wa.me/55" + numero + "?text=" + mensagem;
+
+            window.open(link, "_blank");
+        }
+
+    </script>
 </body>
 </html>
