@@ -15,7 +15,7 @@ function salvarHorarios(horario){
 localStorage.setItem("horario", horario)
 window.location.href="confirmacao.html"
 }
-
+// finalizar Agendamento
 function carregarResumo() {
     const servico = localStorage.getItem("servico")
     const profissinal = localStorage.getItem("profissional") 
