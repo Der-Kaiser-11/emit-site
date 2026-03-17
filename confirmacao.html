@@ -4,32 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kairos - Confirmacao</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
 </head>
-<body>
+<body onload="CarregarResumo()">
 
     <h1>Confirmar Agendamento</h1>
 
-    <p>Digite seu número de WhatsApp para confirmar:</p>
+    <p id="resumo"></p>
 
-    <input type="text" id="whatsapp" placeholder="81999999999"> 
+    <button onclick="enviarWhats()"> Confirmar pelo WhatsApp </button>
 
-        <br><br>
-
-        <button onclick="enviarWhatsApp()">Confirmar pelo WhatsApp</button>
-
-    <script>
-
-        function enviarWhatsApp(){
-            let numero = 
-            document.getElementById("whatsapp").value;
-
-            let mensagem ="Olá ,Fiz Um Agendamento Pelo Kairos.";
-
-            let link = "https://wa.me/55" + numero + "?text=" + mensagem;
-
-            window.open(link, "_blank");
-        }
-
-    </script>
 </body>
 </html>

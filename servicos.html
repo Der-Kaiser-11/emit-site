@@ -4,16 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kairos - Serviços</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
     <h1>Escolha o Serviço</h1>
 
-    <button onclick="window.location.href='profissionais.html'">Corte</button>
+    <div class="container">
 
-    <button onclick="window.location.href='profissionais.html'">Barba</button>
+    <div class="card" onclick="salvarServico('Corte')">
+    <h2>Corte</h2>
+    <p>Corte Simples</p>
+    </div>
 
-    <button onclick="window.location.href='profissionais.html'">Corte e Barba</button>
+   <div class="card" onclick="salvarServico('Barba')">
+    <h2>Barba</h2>
+    <p>Barba Completa</p>
+    </div>
     
+<div class="card" onclick="salvarServico('Corte + Barba')">
+    <h2>Barba + Corte</h2>
+    <p>Combo Completo</p>
+</div>
+
+</div>
+
 </body>
 </html>

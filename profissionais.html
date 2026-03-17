@@ -4,16 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kairos - Profissional</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <h1>Escolha o Profissional</h1>
 
-    <button onclick="window.location.href='horarios.html'">Carlinhos</button>
+    <div class="container">
 
-    <button onclick="window.location.href='horarios.html'">Rakan</button>
+    <div class="card" onclick="salvarProfissional('Carlos')">
+    <h2>Carlos</h2>
+    <p>Especialista em Corte</p>
+    </div>
 
-    <button onclick="window.location.href='horarios.html'">Merlin</button>
+    <div class="card" onclick="salvarProfissional('Renan')">
+    <h2>Renan</h2>
+    <p>Especialista em Barba</p>
+    </div>
 
+    <div class="card" onclick="salvarProfissional('Everton')">
+    <h2>Everton</h2>
+    <p>Completo</p>
+    </div>
 
+    </div>
+  
 </body>
 </html>
