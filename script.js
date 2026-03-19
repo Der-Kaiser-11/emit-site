@@ -27,12 +27,14 @@ function carregarResumo() {
 }
 
 function enviarWhats() {
+    const nome = localStorage.getItem("nome")
     const servico = localStorage.getItem("servico")
     const profissional = localStorage.getItem("profissional")
     const horario = localStorage.getItem("horario")
 
     const mensagem = `Olá, quero agendar:
 
+    Nome: ${nome}
     Serviço: ${servico}
     Profissional: ${profissional}
     Horário: ${horario}`
@@ -42,4 +44,21 @@ function enviarWhats() {
     localStorage.removeItem("horario")
 
     window.location.href=`https://wa.me/5581999999999?text=${encodeURIComponent(mensagem)}`
+}
+// Dados do Cliente
+
+function salvarCliente(){
+    const nome = 
+document.getElementById("nome").value
+    const idade =
+document.getElementById("idade").value
+
+if (nome === " " , idade === " "){
+    alert ("Preenche tudo ai ):") 
+    return
+}
+localStorage.setItem("nome", nome)
+localStorage.setItem("idade", idade)
+
+window.location.href="servicos.html"
 }
