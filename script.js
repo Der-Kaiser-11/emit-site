@@ -49,14 +49,25 @@ function enviarWhats() {
 
 function salvarCliente(){
     const nome = 
-document.getElementById("nome").value
+document.getElementById("nome").value.trim()
     const idade =
-document.getElementById("idade").value
+document.getElementById("idade").value.trim()
 
-if (nome === " " , idade === " "){
-    alert ("Preenche tudo ai ):") 
+    console.log(nome, idade)
+
+if (!nome|| !idade){
+   const erro =
+document.getElementById("erro")
+erro.innerText = "Preenche tudo Ai 😅"
+erro.style.display = "block"
+
+setTimeout(() => {
+    erro.style.display = "none"
+},2000)
+
     return
 }
+
 localStorage.setItem("nome", nome)
 localStorage.setItem("idade", idade)
 
