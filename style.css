@@ -3,7 +3,11 @@ body {
     font-family: arial, sans-serif;
     background-color: #0f172a;
     color: white;
+   
+    display: flex;
     justify-content: center;
+    align-items: center;
+
     height: 100vh;
     flex-direction: column;
 }
@@ -11,10 +15,13 @@ body {
 h1 {
     font-size: 42px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 /* BOTÃO */
 button {
+    display: block;
+    margin: 20px auto;
     padding: 18px 40px;
     font-size: 18px;
     border-radius: 15px;
@@ -45,15 +52,18 @@ button:hover {
 .card {
     background: #1e293b;
     padding: 20px;
-    border-radius: 14px;
+    border-radius: 16px;
     width: 100%;
-    max-width: 500px;
-    margin: 10px auto;
-    text-align: left;
-    cursor: default;
-    transition: 0.2s;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    border: none;
+    max-width: 400px;
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+
+    transition: 0.25s;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .card:hover {
@@ -117,8 +127,9 @@ input {
 }
 
 .ocupado {
-  opacity: 0.5;
+  opacity: 0.4;
   pointer-events: none;
+  filter: grayscale(100%);
 }
 
 .card {
