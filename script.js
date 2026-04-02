@@ -5,7 +5,7 @@ import { getFirestore, addDoc, collection, getDocs } from "https://www.gstatic.c
 
 // 🔥 CONFIG
 const firebaseConfig = {
-  apiKey: "TUA_KEY_AQUI",
+  apiKey: "AIzaSyAL4jHz4Hj60DcDshABLdLZNBcM0G_TfUI",
   authDomain: "kairos---site.firebaseapp.com",
   projectId: "kairos---site",
   storageBucket: "kairos---site.appspot.com",
