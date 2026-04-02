@@ -1,23 +1,61 @@
-<!-- Improved painel.html Structure -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel</title>
+  <meta charset="UTF-8">
+  <title>Painel - Emit</title>
+
+  <script src="https://www.gstatic.com/firebasejs/12.11.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.11.0/firebase-auth-compat.js"></script>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: red;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAL4jHz4Hj60DcDshABLdLZNBcM0G_TfUI",
+      authDomain: "kairos---site.firebaseapp.com",
+      projectId: "kairos---site",
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (!user) {
+        window.location.href = "login.html";
+      }
+    });
+
+    function logout() {
+      firebase.auth().signOut().then(() => {
+        window.location.href = "login.html";
+      });
+    }
+  </script>
 </head>
+
 <body>
-    <header>
-        <h1>Bem-vindo ao Painel</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Seção Principal</h2>
-            <p>Conteúdo principal vai aqui.</p>
-        </section>
-        <footer>
-            <p>&copy; 2026 Der-Kaiser-11. Todos os direitos reservados.</p>
-        </footer>
-    </main>
+
+  <h1>📊 Painel Emit</h1>
+  <p>Você está logado</p>
+
+  <button onclick="logout()">Sair</button>
+
 </body>
 </html>
