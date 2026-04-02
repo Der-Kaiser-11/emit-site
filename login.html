@@ -1,46 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <script src="https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js"></script>
-    <script>
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyAL4jHz4Hj60DcDshABLdLZNBcM0G_TfUI",
-            authDomain: "kairos---site.firebaseapp.com",
-            projectId: "kairos---site",
-            storageBucket: "kairos---site.appspot.com",
-            messagingSenderId: "224167735459",
-            appId: "1:224167735459:web:7a570ef0f6d71f96c6cf16"
-        };
+  <meta charset="UTF-8">
+  <title>Login - Emit</title>
 
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
+  <script src="https://www.gstatic.com/firebasejs/12.11.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.11.0/firebase-auth-compat.js"></script>
 
-        function login() {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
 
-            firebase.auth().signInWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    // Signed in
-                    var user = userCredential.user;
-                    // Redirect to painel.html
-                    window.location.href = "painel.html";
-                })
-                .catch((error) => {
-                    console.error("Error during login: ", error);
-                });
-        }
-    </script>
+    input {
+      padding: 10px;
+      margin: 8px;
+      border-radius: 8px;
+      border: none;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #22c55e;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAL4jHz4Hj60DcDshABLdLZNBcM0G_TfUI",
+      authDomain: "kairos---site.firebaseapp.com",
+      projectId: "kairos---site",
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(() => {
+          window.location.href = "painel.html";
+        })
+        .catch((error) => {
+          alert("Erro no login");
+          console.error(error);
+        });
+    }
+  </script>
 </head>
+
 <body>
-    <h1>Login</h1>
-    <input type='email' id='email' placeholder='Email' required>
-    <input type='password' id='password' placeholder='Password' required>
-    <button onclick='login()'>Login</button>
+  <h1>Login Emit</h1>
+
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Senha">
+
+  <button onclick="login()">Entrar</button>
 </body>
 </html>
